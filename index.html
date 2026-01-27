@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Спецтехника Алматы | Манипулятор 24/7 | KAZSPEC</title>
+    <meta name="description" content="Услуги манипулятора в Алматы. Срочная подача спецтехники. Перевозка грузов любой сложности.">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17833317410"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -8,221 +13,213 @@
       gtag('js', new Date());
       gtag('config', 'AW-17833317410');
     </script>
-
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
+        if (typeof(url) != 'undefined') { window.location = url; }
       };
       gtag('event', 'conversion', {
           'send_to': 'AW-17833317410/hj_-CNjTytcbEKKoy7dC',
-          'transaction_id': '',
           'event_callback': callback
       });
       return false;
     }
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Услуги манипулятора Алматы | Аренда спецтехники</title>
-    <meta name="description" content="Аренда манипулятора в Алматы. Перевозка контейнеров, бытовок, стройматериалов. Быстрая подача, опытные водители. +7 747 464 0078">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        :root { --primary-orange: #FF9800; --dark-bg: #111111; --dark-surface: #1E1E1E; }
-        html, body { overflow-x: hidden; width: 100%; position: relative; }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-bg); color: white; }
-        h1, h2, h3, .btn-text { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-        .hero-section { background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/manipulator-hero.jpg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; min-height: 100vh; }
-        .text-accent { color: var(--primary-orange); } .bg-accent { background-color: var(--primary-orange); } .border-accent { border-color: var(--primary-orange); }
-        .btn-primary { background-color: var(--primary-orange); color: #000; transition: all 0.3s ease; position: relative; overflow: hidden; font-weight: bold; }
-        .btn-primary:hover { background-color: #e68900; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3); }
-        .btn-outline { border: 2px solid var(--primary-orange); color: white; transition: all 0.3s ease; }
-        .btn-outline:hover { background-color: var(--primary-orange); color: black; }
-        .service-card { background-color: var(--dark-surface); transition: all 0.4s ease; border-bottom: 3px solid transparent; }
-        .service-card:hover { transform: translateY(-10px); border-bottom: 3px solid var(--primary-orange); background-color: #252525; }
-        .service-card:hover .service-icon { transform: rotateY(180deg); }
-        .service-icon { transition: transform 0.5s ease; }
-        .gallery-item { overflow: hidden; position: relative; }
-        .gallery-item img { transition: transform 0.5s ease; width: 100%; height: 100%; object-fit: cover; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .pulse-animation { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        :root {
+            --manip-color: #00E5FF;
+            --light-bg: #ffffff;
+            --section-bg: #F9FAFB;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --border-color: #E5E7EB;
+        }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--light-bg); color: var(--text-main); }
+        h1, h2, h3, .font-tech { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+        .text-grad-manip { background: linear-gradient(to right, #00E5FF, #2979FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .tech-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .tech-card[data-type="manip"]:hover { border-color: var(--manip-color); box-shadow: 0 20px 25px -5px rgba(0, 229, 255, 0.15), 0 10px 10px -5px rgba(0, 229, 255, 0.1); transform: translateY(-5px); }
+
+        .specs-box {
+            background: #F3F4F6;
+            border-top: 1px solid var(--border-color);
+        }
+        .spec-item { display: flex; items-center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        .spec-item:last-child { border-bottom: none; }
+        .spec-label { color: var(--text-muted); display: flex; items-center; gap: 8px; }
+        .spec-value { font-weight: bold; color: var(--text-main); }
+
+        .btn-manip { background: linear-gradient(to right, #00E5FF, #00B0FF); color: white; font-weight: bold; text-shadow: 0 1px 2px rgba(0,0,0,0.1);}
     </style>
 </head>
-<body>
+<body class="pb-20 md:pb-0">
 
-    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800 py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center overflow-hidden">
-            <div class="text-xl md:text-2xl font-bold tracking-wider text-white truncate">
-                MANIPULATOR<span class="text-accent">.ALMATY</span>
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-tech text-xl md:text-2xl font-black tracking-wider shrink-0 text-gray-900">
+                KAZ<span class="text-blue-600">SPEC</span>
+                <div class="text-[9px] text-gray-500 leading-none -mt-1">СПЕЦТЕХНИКА</div>
             </div>
-            <div class="flex items-center gap-6 shrink-0">
-                <div class="hidden md:flex flex-col text-right">
-                    <span class="text-xs text-gray-400">Работаем по г. Алматы</span>
-                    <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-xl font-bold hover:text-accent transition">+7 747 464 0078</a>
-                </div>
-                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="hidden md:block btn-primary px-6 py-2 rounded uppercase text-sm pulse-animation">
-                    Заказать
-                </a>
-                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="md:hidden w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black pulse-animation">
-                    <i class="fas fa-phone"></i>
+            
+            <div class="hidden md:flex items-center gap-6 font-medium text-gray-700">
+                <a href="#manip-section" class="flex items-center gap-2 hover:text-[var(--manip-color)] transition">
+                    <i class="fas fa-truck-loading text-[var(--manip-color)]"></i> Манипулятор
                 </a>
             </div>
+
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="whitespace-nowrap font-tech font-bold text-lg md:text-2xl text-gray-900 hover:text-blue-600 transition shrink-0">
+                +7 747 464 0078
+            </a>
         </div>
-    </nav>
+    </header>
 
-    <section class="hero-section flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/50 z-0"></div>
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-20 bg-gray-900">
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero-bg.jpg" class="w-full h-full object-cover" alt="Спецтехника Алматы">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <p class="text-accent tracking-[0.2em] mb-4 text-sm md:text-lg font-bold uppercase">Перевозка грузов Алматы</p>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    Услуги манипулятора <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-500">Быстро и Надежно</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                    Перевозка бытовок, контейнеров, стройматериалов. Погрузка и разгрузка любой сложности.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-primary px-10 py-4 rounded text-lg uppercase tracking-wider font-bold pulse-animation">
-                        <i class="fas fa-phone-alt mr-2"></i> Позвонить
-                    </a>
-                    <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-outline px-10 py-4 rounded text-lg uppercase tracking-wider bg-transparent hover:bg-white hover:text-black">
-                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-                    </a>
-                </div>
+            <h1 class="font-tech text-4xl md:text-7xl font-black mb-6 leading-tight animate__animated animate__fadeInDown text-white">
+                УСЛУГИ <span class="text-grad-manip">МАНИПУЛЯТОРА 24/7</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate__animated animate__fadeInUp animate__delay-1s">
+                Перевозка грузов любой сложности.
+                <b class="text-white">Подача по Алматы от 20 минут.</b>
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-manip px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/20 hover:scale-105 transition">
+                    <i class="fab fa-whatsapp"></i> Заказать Манипулятор
+                </a>
+                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-manip px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/20 hover:scale-105 transition">
+                    <i class="fas fa-phone-alt"></i> Заказать по телефону
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-[#111] overflow-hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">
-                Наши <span class="text-accent">Услуги</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="service-card p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl text-accent mb-6 service-icon"><i class="fas fa-truck-pickup"></i></div><h3 class="text-xl font-bold mb-3">Аренда манипулятора</h3><p class="text-gray-400 text-sm">Почасовая и посменная аренда техники. Грузоподъемность стрелы от 3 до 7 тонн.</p>
+    <section id="manip-section" class="py-20 relative bg-white">
+        <div class="container mx-auto px-4 relative z-10">
+             <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-[var(--manip-color)] rounded-xl flex items-center justify-center text-2xl text-white shadow-lg shadow-cyan-500/30">
+                    <i class="fas fa-truck-loading"></i>
                 </div>
-                <div class="service-card p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl text-accent mb-6 service-icon"><i class="fas fa-cubes"></i></div><h3 class="text-xl font-bold mb-3">Перевозка материалов</h3><p class="text-gray-400 text-sm">Кирпич, пескоблок, плитка, лес, металлоконструкции и другие стройматериалы.</p>
-                </div>
-                <div class="service-card p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-5xl text-accent mb-6 service-icon"><i class="fas fa-dolly"></i></div><h3 class="text-xl font-bold mb-3">Погрузка и разгрузка</h3><p class="text-gray-400 text-sm">Аккуратная работа с тяжелыми грузами на объектах. Подача на этаж.</p>
-                </div>
-                <div class="service-card p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-5xl text-accent mb-6 service-icon"><i class="fas fa-warehouse"></i></div><h3 class="text-xl font-bold mb-3">Контейнеры / Бытовки</h3><p class="text-gray-400 text-sm">Перевозка гаражей, киосков, 20-40 футовых контейнеров и бытовок.</p>
-                </div>
+                <h2 class="font-tech text-3xl md:text-4xl font-black text-grad-manip">Наши Манипуляторы</h2>
             </div>
-        </div>
-    </section>
 
-    <section class="py-20 bg-zinc-900 overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-4xl font-bold mb-8">Почему выбирают <span class="text-accent">Нас</span></h2>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-accent text-2xl mr-4 mt-1"></i>
-                            <div><h4 class="text-xl font-bold">Работаем по г. Алматы</h4><p class="text-gray-400">Знаем город, проедем в узкие дворы и на сложные стройплощадки.</p></div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-tachometer-alt text-accent text-2xl mr-4 mt-1"></i>
-                            <div><h4 class="text-xl font-bold">Быстрая подача</h4><p class="text-gray-400">Техника всегда исправна и готова к выезду. Подача в день обращения.</p></div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-user-hard-hat text-accent text-2xl mr-4 mt-1"></i>
-                            <div><h4 class="text-xl font-bold">Опытный оператор</h4><p class="text-gray-400">Стаж работы более 10 лет. Гарантия сохранности вашего груза при подъеме.</p></div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-wallet text-accent text-2xl mr-4 mt-1"></i>
-                            <div><h4 class="text-xl font-bold">Честные цены</h4><p class="text-gray-400">Расчет стоимости по телефону. Без скрытых доплат на месте.</p></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="relative h-96 rounded-xl overflow-hidden shadow-2xl border-4 border-gray-800" data-aos="fade-left">
-                    <img src="images/manipulator-about.jpg" alt="Манипулятор Алматы" class="w-full h-full object-cover">
-                    <div class="absolute bottom-4 right-4 bg-accent text-black px-4 py-2 font-bold rounded">
-                        <i class="fas fa-clock mr-2"></i> Без выходных
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="tech-card" data-type="manip" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="images/manip-1.jpg" class="w-full h-full object-cover transition duration-500 hover:scale-110" alt="Манипулятор 3т">
+                        <div class="absolute top-2 left-2 bg-[var(--manip-color)] text-white text-xs font-bold px-2 py-1 rounded shadow-sm">Компактный</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-[#111] overflow-hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Наша <span class="text-accent">Техника</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="gallery-item h-64 rounded-lg bg-gray-800" data-aos="zoom-in"><img src="images/manipulator-1.jpg" class="w-full h-full object-cover opacity-80 hover:opacity-100" alt="Фото манипулятора 1"></div>
-                <div class="gallery-item h-64 rounded-lg bg-gray-800" data-aos="zoom-in" data-aos-delay="100"><img src="images/manipulator-2.jpg" class="w-full h-full object-cover opacity-80 hover:opacity-100" alt="Фото манипулятора 2"></div>
-                <div class="gallery-item h-64 rounded-lg bg-gray-800" data-aos="zoom-in" data-aos-delay="200"><img src="images/manipulator-3.jpg" class="w-full h-full object-cover opacity-80 hover:opacity-100" alt="Фото манипулятора 3"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-zinc-900 border-t border-gray-800 overflow-hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Как мы <span class="text-accent">Работаем</span></h2>
-            <div class="flex flex-col md:flex-row justify-between items-center relative gap-8 md:gap-0">
-                <div class="w-full md:w-1/4 text-center relative z-10" data-aos="fade-up" data-aos-delay="0"><div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl font-bold text-black mx-auto mb-4 shadow-lg shadow-orange-500/50">1</div><h4 class="font-bold text-lg">Заявка</h4><p class="text-gray-400 text-sm">Звоните или пишите</p></div>
-                <div class="w-full md:w-1/4 text-center relative z-10" data-aos="fade-up" data-aos-delay="150"><div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4 border-2 border-accent">2</div><h4 class="font-bold text-lg">Детали</h4><p class="text-gray-400 text-sm">Уточняем вес и габариты</p></div>
-                <div class="w-full md:w-1/4 text-center relative z-10" data-aos="fade-up" data-aos-delay="300"><div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4 border-2 border-accent">3</div><h4 class="font-bold text-lg">Подача</h4><p class="text-gray-400 text-sm">Приезжаем на объект</p></div>
-                <div class="w-full md:w-1/4 text-center relative z-10" data-aos="fade-up" data-aos-delay="450"><div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4 border-2 border-accent">4</div><h4 class="font-bold text-lg">Работа</h4><p class="text-gray-400 text-sm">Выполняем погрузку</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-[#0a0a0a] overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl">
-                <div class="p-6 md:p-10 flex flex-col justify-center bg-[#222]">
-                    <h2 class="text-3xl font-bold mb-6">Заказать <span class="text-accent">Манипулятор</span></h2>
-                    <p class="text-gray-400 mb-8">Оставьте заявку и мы рассчитаем точную стоимость работ для вашего груза.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gray-800 rounded flex items-center justify-center text-accent mr-4 shrink-0"><i class="fas fa-map-marker-alt text-xl"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase">Регион</p><p class="font-bold text-lg">г. Алматы и область</p></div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gray-800 rounded flex items-center justify-center text-accent mr-4 shrink-0"><i class="fas fa-phone-volume text-xl"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase">Телефон</p><a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="font-bold text-xl hover:text-accent whitespace-nowrap">+7 747 464 0078</a></div>
+                    <div class="p-5 specs-box">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Манипулятор 3 тонны</h3>
+                        <div class="space-y-2">
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-truck-front"></i> Грузоподъемность борта:</span> <span class="spec-value">5 тонн</span></div>
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-ruler-horizontal"></i> Длина борта:</span> <span class="spec-value">5.5 метров</span></div>
+                             <div class="spec-item"><span class="spec-label"><i class="fas fa-arrows-alt-v"></i> Грузоподъемность стрелы:</span> <span class="spec-value text-blue-600">3 тонны</span></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="mt-8 flex flex-col md:flex-row gap-4">
-                        <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 btn-primary py-3 text-center rounded font-bold">Позвонить</a>
-                        <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 text-center rounded font-bold transition flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                 <div class="tech-card" data-type="manip" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="images/manip-2.jpg" class="w-full h-full object-cover transition duration-500 hover:scale-110" alt="Манипулятор 8т">
+                         <div class="absolute top-2 left-2 bg-[var(--manip-color)] text-white text-xs font-bold px-2 py-1 rounded shadow-sm">Популярный</div>
+                    </div>
+                    <div class="p-5 specs-box">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Манипулятор 8 тонн</h3>
+                        <div class="space-y-2">
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-truck-front"></i> Грузоподъемность борта:</span> <span class="spec-value">12 тонн</span></div>
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-ruler-horizontal"></i> Длина борта:</span> <span class="spec-value">7 метров</span></div>
+                             <div class="spec-item"><span class="spec-label"><i class="fas fa-arrows-alt-v"></i> Грузоподъемность стрелы:</span> <span class="spec-value text-blue-600">8 тонн</span></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="p-10 bg-accent/10">
-                    <form action="#" class="space-y-4">
-                        <div><input type="text" placeholder="Иван" class="w-full bg-[#111] border border-gray-700 rounded p-3 text-white focus:border-accent focus:outline-none transition"></div>
-                        <div><input type="tel" placeholder="+7 (___) ___-__-__" class="w-full bg-[#111] border border-gray-700 rounded p-3 text-white focus:border-accent focus:outline-none transition"></div>
-                        <div><textarea rows="4" placeholder="Например: Бытовка 6 метров, вес 2 тонны" class="w-full bg-[#111] border border-gray-700 rounded p-3 text-white focus:border-accent focus:outline-none transition"></textarea></div>
-                        <button type="submit" class="w-full btn-primary py-4 rounded font-bold uppercase tracking-wider text-black mt-2">Отправить заявку</button>
-                    </form>
+                 <div class="tech-card" data-type="manip" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="images/manip-3.jpg" class="w-full h-full object-cover transition duration-500 hover:scale-110" alt="Манипулятор 12т">
+                         <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">Тяжеловес</div>
+                    </div>
+                    <div class="p-5 specs-box">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Манипулятор 10 тонн</h3>
+                        <div class="space-y-2">
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-truck-front"></i> Грузоподъемность борта:</span> <span class="spec-value">12 тонн</span></div>
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-ruler-horizontal"></i> Длина борта:</span> <span class="spec-value">9 метров</span></div>
+                             <div class="spec-item"><span class="spec-label"><i class="fas fa-arrows-alt-v"></i> Грузоподъемность стрелы:</span> <span class="spec-value text-blue-600">12 тонн</span></div>
+                        </div>
+                    </div>
                 </div>
+
+                 <div class="tech-card" data-type="manip" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden relative bg-gray-100">
+                        <img src="images/manip-4.jpg" class="w-full h-full object-cover transition duration-500 hover:scale-110" alt="Манипулятор 20т">
+                         <div class="absolute top-2 left-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm"><i class="fas fa-cube"></i> Негабарит</div>
+                    </div>
+                    <div class="p-5 specs-box">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Манипулятор 12 тонн</h3>
+                        <div class="space-y-2">
+                            <div class="spec-item"><span class="spec-label"><i class="fas fa-truck-front"></i> Грузоподъемность борта:</span> <span class="spec-value">15 тонн</span></div>
+                             <div class="spec-item"><span class="spec-label"><i class="fas fa-ruler-horizontal"></i> Длина борта:</span> <span class="spec-value">до 12 метров</span></div>
+                             <div class="spec-item"><span class="spec-label"><i class="fas fa-arrows-alt-v"></i> Грузоподъемность стрелы:</span> <span class="spec-value text-blue-600">20 тонн</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-manip inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-cyan-500/20 hover:scale-105 transition">
+                    <i class="fab fa-whatsapp text-xl"></i> Рассчитать стоимость аренды
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-8 border-t border-gray-900 text-center text-gray-500 text-sm">
-        <div class="container mx-auto"><p>&copy; 2024 Услуги Манипулятора Алматы. Все права защищены.</p></div>
+    <footer class="bg-white py-10 text-center border-t border-gray-200 mb-16 md:mb-0 relative z-10">
+        <div class="font-tech text-2xl font-black tracking-wider mb-4 text-gray-900">KAZ<span class="text-blue-600">SPEC</span></div>
+        <div class="flex justify-center gap-6 text-3xl mb-6">
+            <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-blue-500 hover:scale-125 transition"><i class="fab fa-telegram"></i></a>
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-orange-500 hover:scale-125 transition"><i class="fas fa-phone-square"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm mb-2">Единая служба спецтехники Алматы. 2025.</p>
+        <p class="text-[10px] text-gray-400">
+            Разработка сайта: <a href="https://t.me/Anukenn" target="_blank" class="text-blue-500 hover:underline">@Anukenn</a>
+        </p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, offset: 100, disable: 'mobile' });</script>
-</body>
-    </html>
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-gray-200 p-3 md:hidden z-50 flex gap-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 btn-manip text-white rounded-xl flex items-center justify-center py-3 font-bold text-sm shadow-lg active:scale-95 transition">
+            <i class="fab fa-whatsapp mr-2"></i> МАНИПУЛЯТОР
+        </a>
+        <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 btn-manip text-white rounded-xl flex items-center justify-center py-3 font-bold text-sm shadow-lg active:scale-95 transition">
+            <i class="fas fa-phone-alt mr-2"></i> ЗВОНОК
+        </a>
+    </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script>
+        AOS.init({ once: true, duration: 800, offset: 100 });
+    </script>
+</body>
+</html>
