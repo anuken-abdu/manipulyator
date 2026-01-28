@@ -71,6 +71,79 @@
         @media (min-width: 768px) {
             .hero-bg-img { object-position: 50% 58%; }
         }
+
+        /* ДОБАВЛЕНО: Лайтбокс (открытие фото по клику) */
+        .lightbox-overlay{
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.82);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 18px;
+        }
+        .lightbox-overlay.is-open{ display: flex; }
+        .lightbox-panel{
+            width: min(1100px, 100%);
+            height: min(78vh, 760px);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-img{
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 30px 70px rgba(0,0,0,.55);
+            background: #111;
+        }
+        .lightbox-btn{
+            position: absolute;
+            top: 12px;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(0,0,0,.35);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform .15s ease, background .15s ease, border-color .15s ease;
+            user-select: none;
+        }
+        .lightbox-btn:hover{ transform: scale(1.04); background: rgba(0,0,0,.5); border-color: rgba(255,255,255,.35); }
+        .lightbox-close{ right: 12px; }
+        .lightbox-prev, .lightbox-next{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .lightbox-prev{ left: 12px; }
+        .lightbox-next{ right: 12px; }
+        .lightbox-counter{
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(0,0,0,.35);
+            color: rgba(255,255,255,.92);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .02em;
+            user-select: none;
+        }
+        @media (max-width: 640px){
+            .lightbox-panel{ height: min(72vh, 640px); }
+            .lightbox-prev, .lightbox-next{ display: none; } /* на мобилке свайп */
+        }
+        /* /ДОБАВЛЕНО */
     </style>
 </head>
 <body class="pb-20 md:pb-0">
@@ -323,30 +396,30 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-3 md:gap-4">
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-1.jpg" alt="Фото работы 1" class="w-full h-auto block rounded-xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-3 md:gap-4" data-gallery="works">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="0">
+                            <img src="images/gallery-1.jpg" alt="Фото работы 1" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-2.jpg" alt="Фото работы 2" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="1">
+                            <img src="images/gallery-2.jpg" alt="Фото работы 2" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-3.jpg" alt="Фото работы 3" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="2">
+                            <img src="images/gallery-3.jpg" alt="Фото работы 3" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-4.jpg" alt="Фото работы 4" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="3">
+                            <img src="images/gallery-4.jpg" alt="Фото работы 4" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-5.jpg" alt="Фото работы 5" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="4">
+                            <img src="images/gallery-5.jpg" alt="Фото работы 5" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-6.jpg" alt="Фото работы 6" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="5">
+                            <img src="images/gallery-6.jpg" alt="Фото работы 6" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-7.jpg" alt="Фото работы 7" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="6">
+                            <img src="images/gallery-7.jpg" alt="Фото работы 7" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
-                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                            <img src="images/gallery-8.jpg" alt="Фото работы 8" class="w-full h-auto block rounded-xl">
+                        <div class="tech-card p-2 bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-zoom-in hover:border-[var(--manip-color)]" data-index="7">
+                            <img src="images/gallery-8.jpg" alt="Фото работы 8" class="w-full h-auto block rounded-xl" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -363,9 +436,9 @@
             <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-blue-500 hover:scale-125 transition"><i class="fab fa-telegram"></i></a>
             <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-orange-500 hover:scale-125 transition"><i class="fas fa-phone-square"></i></a>
         </div>
-        <p class="text-gray-500 text-sm mb-2">Единая служба спецтехники Алматы. 2025.</p>
+        <p class="text-gray-500 text-sm mb-2">Единая служба спецтехники Алматы. 2026.</p>
         <p class="text-[10px] text-gray-400">
-            Разработка сайта: <a href="https://t.me/Anukenn" target="_blank" class="text-blue-500 hover:underline">@Anukenn</a>
+            Разработка сайта: <a href="https://anukenn.vercel.app/" target="_blank" class="text-blue-500 hover:underline">Anuken</a>
         </p>
     </footer>
 
@@ -381,10 +454,126 @@
         </a>
     </div>
 
+    <!-- ДОБАВЛЕНО: Лайтбокс модалка -->
+    <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+            <div class="lightbox-counter" id="lightboxCounter">1 / 8</div>
+
+            <button class="lightbox-btn lightbox-prev" id="lightboxPrev" type="button" aria-label="Предыдущее фото">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <img class="lightbox-img" id="lightboxImg" alt="Фото работ">
+
+            <button class="lightbox-btn lightbox-next" id="lightboxNext" type="button" aria-label="Следующее фото">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /ДОБАВЛЕНО -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script>
         AOS.init({ once: true, duration: 800, offset: 100 });
     </script>
+
+    <!-- ДОБАВЛЕНО: JS лайтбокса -->
+    <script>
+      (function () {
+        const gallery = document.querySelector('[data-gallery="works"]');
+        if (!gallery) return;
+
+        const items = Array.from(gallery.querySelectorAll('[data-index]'));
+        const sources = items.map(el => el.querySelector('img')?.getAttribute('src')).filter(Boolean);
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightboxImg');
+        const lbCounter = document.getElementById('lightboxCounter');
+        const btnClose = document.getElementById('lightboxClose');
+        const btnPrev = document.getElementById('lightboxPrev');
+        const btnNext = document.getElementById('lightboxNext');
+
+        let current = 0;
+        let startX = null;
+
+        function update() {
+          if (!sources.length) return;
+          lbImg.src = sources[current];
+          lbCounter.textContent = (current + 1) + ' / ' + sources.length;
+        }
+
+        function openAt(index) {
+          current = Math.max(0, Math.min(index, sources.length - 1));
+          update();
+          lb.classList.add('is-open');
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+          lb.classList.remove('is-open');
+          lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          lbImg.removeAttribute('src');
+        }
+
+        function prev() {
+          current = (current - 1 + sources.length) % sources.length;
+          update();
+        }
+
+        function next() {
+          current = (current + 1) % sources.length;
+          update();
+        }
+
+        // Open on click
+        items.forEach(el => {
+          el.addEventListener('click', () => {
+            const idx = parseInt(el.getAttribute('data-index') || '0', 10);
+            openAt(idx);
+          });
+        });
+
+        // Close interactions
+        btnClose.addEventListener('click', close);
+        lb.addEventListener('click', (e) => {
+          if (e.target === lb) close();
+        });
+
+        // Buttons
+        btnPrev.addEventListener('click', prev);
+        btnNext.addEventListener('click', next);
+
+        // Keyboard
+        document.addEventListener('keydown', (e) => {
+          if (!lb.classList.contains('is-open')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') prev();
+          if (e.key === 'ArrowRight') next();
+        });
+
+        // Swipe (mobile)
+        lb.addEventListener('touchstart', (e) => {
+          if (!lb.classList.contains('is-open')) return;
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        lb.addEventListener('touchend', (e) => {
+          if (!lb.classList.contains('is-open') || startX === null) return;
+          const endX = e.changedTouches[0].clientX;
+          const diff = endX - startX;
+          startX = null;
+          if (Math.abs(diff) < 40) return;
+          if (diff > 0) prev(); else next();
+        }, { passive: true });
+      })();
+    </script>
+    <!-- /ДОБАВЛЕНО -->
 </body>
 </html>
